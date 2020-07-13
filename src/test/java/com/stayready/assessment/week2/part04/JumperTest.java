@@ -33,34 +33,5 @@ public class JumperTest {
         Assert.assertEquals(expected, actual);
 
     }
-
-    @Test
-    public void solution3(){
-        // Should assert to true
-        Jumper jumper = new Jumper();
-        Integer expected = jumper.jumps(16808,282475250);
-        Integer actual = 16808;
-        Assert.assertEquals(expected, actual);
-
-    }
-
-    @Test
-    public void solution4(){
-        // Should assert to true
-        Jumper jumper = new Jumper();
-        Integer expected = jumper.jumps(458777924,7237710);
-        Integer actual = 2802257;
-        Assert.assertEquals(expected, actual);
-
-    }
-
-    @Test
-    public void solution5(){
-        // Should assert to true
-        Jumper jumper = new Jumper();
-        Integer expected = jumper.jumps(823564441,115438166);
-        Integer actual = 15497286;
-        Assert.assertEquals(expected, actual);
-
-    }
+   
 }

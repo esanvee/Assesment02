@@ -6,6 +6,16 @@ public class Jumper {
      * Complete the function below.
      */
     public int jumps(int k, int j) {
-        return -1;
+
+        int jump = 1;
+        int height = j;
+
+        while(height < k){
+            height += height;
+            jump++;
+
+        }
+
+        return jump;
     }
 }

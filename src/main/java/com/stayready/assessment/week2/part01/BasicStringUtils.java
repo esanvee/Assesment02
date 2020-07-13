@@ -7,7 +7,7 @@ public class BasicStringUtils {
      * @return concatenation of `string1` and `string2`
      */
     public static String concatentate(String string1, String string2) {
-        return null;
+        return string1 + string2;
     }
 
     /**
@@ -15,7 +15,11 @@ public class BasicStringUtils {
      * @return an identical string with characters in reverse order
      */
     public static String reverse(String string1) {
-        return null;
+
+        String result = new StringBuilder(string1).reverse().toString();
+
+        return result;
+    
     }
 
     /**
@@ -24,7 +28,13 @@ public class BasicStringUtils {
      * @return concatenation of the reverse of `string1` and reverse of `string2`
      */
     public static String reverseThenConcatenate(String string1, String string2) {
-        return null;
+
+        String part1 = new StringBuilder(string1).reverse().toString();
+
+        String part2 = new StringBuilder(string2).reverse().toString();
+       
+
+        return part1 + part2;
     }
 
     /**
@@ -33,7 +43,21 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        return null;
+
+        String result ="";
+
+        for (int i = 0; i < string.length(); i++){
+
+            String value = String.valueOf(string.charAt(i)); //Take the character's string value
+
+            if (!charactersToRemove.contains(value)){ //If it is NOT amongst the removed characters
+                result += value; //Then add it
+            }
+        }
+
+       
+        
+        return result;
     }
 
     /**
@@ -42,6 +66,11 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+        
+        String result = removeCharacters(string, charactersToRemove);
+
+        result = reverse(result);
+
+        return result;
     }
 }

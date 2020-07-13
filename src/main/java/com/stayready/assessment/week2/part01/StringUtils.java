@@ -7,7 +7,15 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        return null;
+        String result = "";
+
+        for (int i = 0; i < amountOfPadding - stringToBePadded.length(); i++){
+            result += " ";
+        }
+
+        result += stringToBePadded;
+
+        return result;
     }
 
     /**
@@ -16,7 +24,17 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
-        return null;
+        String result = "";
+
+        result += stringToBePadded;
+
+        for (int i = 0; i < amountOfPadding - stringToBePadded.length(); i++){
+            result += " ";
+        }
+
+        
+
+        return result;
     }
 
     /**
@@ -25,7 +43,14 @@ public class StringUtils {
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        return null;
+
+        String result = "";
+
+        for(int i = 0; i < numberOfTimeToRepeat; i++){
+            result += stringToBeRepeated;
+        }
+
+        return result;
     }
 
     /**
@@ -33,7 +58,20 @@ public class StringUtils {
      * @return - true if string only contains alphabetic a-z characters
      */
     public static Boolean isAlphaString(String string) {
-        return null;
+
+        String value = string.replace(" ", "");//remove spaces
+        
+        
+        for (int i = 0; i < value.length(); i++){
+
+            char ch = value.charAt(i);
+            
+            if (!(ch >= 'A' && ch <= 'z')){ //If NOT a letter
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
@@ -41,7 +79,18 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return null;
+
+        for (int i = 0; i < string.length(); i++){
+
+            char ch = string.charAt(i);
+
+            if(Character.isDigit(ch)){
+                return true;
+            }
+
+        }
+
+        return false;
     }
 
     /**

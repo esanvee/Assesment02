@@ -2,22 +2,48 @@ package com.stayready.assessment.week2.part02;
 
 public class IntegerArrayUtils {
     /**
-     * @param integerArray - array to have value added to it
+     * @param integerArray   - array to have value added to it
      * @param valueToBeAdded - value to be added to the end of the array
-     * @return - identical array with one additional element of `valueToBeAdded` at the end of the array
+     * @return - identical array with one additional element of `valueToBeAdded` at
+     *         the end of the array
      */
     public static Integer[] add(Integer[] integerArray, Integer valueToBeAdded) {
-        return null;
+
+        Integer[] newAry = new Integer[integerArray.length + 1];
+
+        for (int i = 0; i < integerArray.length; i++) {
+            newAry[i] = integerArray[i]; // clone array
+        }
+
+        newAry[newAry.length - 1] = valueToBeAdded; // add last element at the end
+
+        return newAry;
     }
 
     /**
-     * @param integerArray - array to be manipulated
-     * @param indexToInsertAt - index of the element to be inserted at
+     * @param integerArray      - array to be manipulated
+     * @param indexToInsertAt   - index of the element to be inserted at
      * @param valueToBeInserted - value of the element to be inserted
-     * @return `integerArray` with `valueToBeInserted` at index number `indexToInsertAt`
+     * @return `integerArray` with `valueToBeInserted` at index number
+     *         `indexToInsertAt`
      */
     public static Integer[] replace(Integer[] integerArray, int indexToInsertAt, Integer valueToBeInserted) {
-        return null;
+
+        Integer[] newAry = new Integer[integerArray.length];
+
+        for (int i = 0; i < integerArray.length; i++) {
+
+            if (i == indexToInsertAt) {//reach the index
+
+                newAry[i] = valueToBeInserted;
+
+            } else {//continue as usual
+
+                newAry[i] = integerArray[i]; // clone array
+            }
+        }
+
+        return newAry;
     }
 
     /**
@@ -26,15 +52,36 @@ public class IntegerArrayUtils {
      * @return element located at `indexToFetch`
      */
     public static Integer get(Integer[] integerArray, Integer indexToFetch) {
-        return null;
+        return integerArray[indexToFetch];
     }
+
+
+
 
     /**
      * @param integerArray - array to be evaluated
-     * @return identical array with even-values incremented by 1 and odd-values decremented by 1
+     * @return identical array with even-values incremented by 1 and odd-values
+     *         decremented by 1
      */
     public static Integer[] incrementEvenDecrementOdd(Integer[] integerArray) {
-        return null;
+        
+        Integer[] newAry = new Integer[integerArray.length];
+
+        for (int i = 0; i < newAry.length; i++) {
+
+			if (integerArray[i] % 2 == 0) {
+
+				newAry[i] = integerArray[i] + 1;
+
+			}else{
+
+                newAry[i] = integerArray[i] - 1;
+
+            }	
+		}
+
+        
+        return newAry;
     }
 
     /**
@@ -42,7 +89,23 @@ public class IntegerArrayUtils {
      * @return identical array with even-values incremented by 1
      */
     public static Integer[] incrementEven(Integer[] integerArray) {
-        return null;
+        Integer[] newAry = new Integer[integerArray.length];
+
+        for (int i = 0; i < newAry.length; i++) {
+
+			if (integerArray[i] % 2 == 0) {
+
+				newAry[i] = integerArray[i] + 1;
+
+			}else{
+
+                newAry[i] = integerArray[i];
+
+            }	
+		}
+
+        
+        return newAry;
     }
 
     /**
@@ -50,6 +113,24 @@ public class IntegerArrayUtils {
      * @return identical array with odd-values decremented by 1
      */
     public static Integer[] decrementOdd(Integer[] input) {
-        return null;
+
+        Integer[] newAry = new Integer[input.length];
+
+        for (int i = 0; i < newAry.length; i++) {
+
+			if (input[i] % 2 == 0) {
+
+				newAry[i] = input[i];
+
+			}else{
+
+                newAry[i] = input[i] - 1;
+
+            }	
+		}
+
+        
+        return newAry;
+    
     }
 }
